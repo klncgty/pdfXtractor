@@ -2,97 +2,89 @@
 ![0203](https://github.com/user-attachments/assets/82aab3ff-2154-4db7-aacf-f59762af0e9f)
 
 
-### PDF’den coplex tabloların CSV-JSON çıkarımı -  AI Web Uygulaması
+### Complex Table Extraction from PDFs to CSV-JSON - AI Web Application
 
-PDF belgelerinizdeki karmaşık tabloları otomatik olarak çıkarın ve temiz, kullanıma hazır CSV veya JSON formatına dönüştürün. Gelişmiş AI ile desteklenen bu uygulama, veri çıkarım sürecini kolaylaştırır ve agent sayesinde tabloya sorular sorabilirsiniz.
+Automatically extract complex tables from your PDF documents and convert them into clean, ready-to-use CSV or JSON formats. Powered by advanced AI, this application streamlines the data extraction process and allows you to ask questions about the tables via an agent.
 
-# 🚀  Öne Çıkan Özellikler 
+# 🚀 Key Features 
 
-AI Destekli Çıkarım: Karmaşık PDF tablolarını yüksek doğrulukla işler.
-Kullanıcı Dostu Arayüz: PDF yükleyin, sayfa seçin ve anında CSV-JSON olarak indirin.
-Akıllı Hata Yönetimi: Temiz ve güvenilir çıktılar sunar.
-Güçlü Entegrasyonlar: Hugging Face modelleri, gmft kütüphanesi, agentic ai ve vektör veritabanı desteği.
+- **AI-Powered Extraction:** Processes complex PDF tables with high accuracy.
+- **User-Friendly Interface:** Upload a PDF, select pages, and instantly download as CSV or JSON.
+- **Smart Error Handling:** Delivers clean and reliable outputs.
+- **Powerful Integrations:** Hugging Face models, gmft library, agentic AI, and vector database support.
 
-# 🔧 Teknoloji Yığını
+# 🔧 Technology Stack
 
-Backend: Python (FastAPI), Hugging Face Transformers
-Frontend: React.js
-PDF İşleme: gmft, PyPDF2
-Veritabanı: PostgreSQL
-AI Özellikleri: Özel NER ve özetleme modelleri
+- **Backend:** Python (FastAPI), Hugging Face Transformers
+- **Frontend:** React.js
+- **PDF Processing:** gmft, PyPDF2
+- **Database:** PostgreSQL
+- **AI Features:** Custom NER and summarization models
 
-# 🛠 Kullanım Senaryoları
-Karmaşık Tablo Çıkarımı
+# 🛠 Use Cases
+- **Complex Table Extraction**
 
-İç içe geçmiş başlıklar, birleştirilmiş hücreler gibi yapıları doğru işler.
-Finansal raporlar, akademik çalışmalar ve resmi belgeler için uygundur.
-RAG (Bilgiye Dayalı AI) Entegrasyonu
-
-
+  Accurately handles nested headers, merged cells, and similar structures.
+  Suitable for financial reports, academic studies, and official documents.
+- **RAG (Retrieval-Augmented Generation) Integration**
 
 
-##  Kurulum Adımları
 
-### 1️⃣ Repoyu Klonlayın
 
-Terminal veya komut istemcisinde aşağıdaki komutu çalıştırarak repoyu kendi bilgisayarınıza çekin:
+## Installation
 
+### 1️⃣ Clone the Repository
+
+Run the following command in your terminal or command prompt to clone the repository to your local machine:
 ```bash
 git clone https://github.com/klncgty/pdfXtractor.git
 ```
 
-### 2️⃣ Python Gereksinimlerini Yükleyin
+### 2️⃣ Install Python Dependencies
 
-Projede yer alan API için gerekli Python paketlerini yüklemek üzere, projenin kök dizininde bulunan `requirements.txt` dosyasını kullanın:
-
+To install the required Python packages for the API, use the requirements.txt file located in the project’s root directory:
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3️⃣ API'yi Çalıştırın
+### 3️⃣ Run the API
 
-API kodları `api` klasöründe yer almaktadır. Terminalden `api` klasörüne gidin ve FastAPI uygulamasını başlatın:
-
+The API code is located in the api folder. Navigate to the api folder in your terminal and start the FastAPI application:
 ```bash
 cd ../api
 uvicorn main:app --reload
 ```
 
-### 4️⃣ Frontend'i Çalıştırın
+### 4️⃣ Run the Frontend
 
-Frontend kodları `src` klasöründe bulunmaktadır. Terminalden `src` klasörüne gidin ve aşağıdaki komutu çalıştırın:
-
+The frontend code is located in the src folder. Navigate to the src folder in your terminal and run the following commands:
 ```bash
 cd src
 npm install
 npm run dev
 ```
 
-Komut çalıştıktan sonra terminalde aşağıdaki gibi bir çıktı alacaksınız:
-
+After running the command, you will see an output similar to this in your terminal:
 ```
 ➜  Local:   http://localhost:port/
 ```
 
-Terminalde [http://localhost:port/](http://localhost:port/) adresine tıklayarak uygulamayı web üzerinde görüntüleyebilirsiniz.
+click on terminal to visualize app [http://localhost:port/](http://localhost:port/) 
 
 
-## ⚠️ Önemli Uyarılar
+## ⚠️ Important Notes
 
-- ** PDF Yüklemeleri:**  
-  Yüklediğiniz PDF dosyaları yerel dizinde `uploads` klasörüne kaydedilecektir.
-
-- ** Çıktılar:**  
-  İşlenen PDF dosyalarından elde edilen çıktılar `outputs` klasörüne kaydedilir. Bu klasörün oluşturulduğundan ve yazma izinlerinin mevcut olduğundan emin olun.
-
-- ** CORS Hatası:**  
-  Eğer tarayıcıda aşağıdaki gibi bir hata alırsanız:
-
+- ** PDF uploading:**  
+  Uploaded PDF files will be saved in the uploads folder in your local directory.
+- ** Outputs:**  
+Outputs generated from processed PDF files are saved in the outputs folder. Ensure this folder exists and has write permissions.
+- ** CORS error:**  
+If you encounter an error in the browser like this:
   ```
   Access to XMLHttpRequest at 'http://localhost:8000/upload' from origin 'http://localhost:5173' has been blocked by CORS policy
   ```
 
-  `api/main.py` dosyasında aşağıdaki gibi `allow_origins=["*"]` ekleyerek sorunu çözebilirsiniz:
+  You can solve erorr  adding this `allow_origins=["*"]`  to `api/main.py`  
 
   ```python
   from fastapi.middleware.cors import CORSMiddleware
@@ -108,19 +100,18 @@ Terminalde [http://localhost:port/](http://localhost:port/) adresine tıklayarak
 
 ## 📌 Ek Bilgiler
 
-- **Frontend ve API İletişimi:**  
-  Frontend, API ile etkileşimde bulunarak PDF dosyalarını yükler ve işler. Her iki tarafın da aynı anda çalıştığından emin olun.
-
-- **Geliştirme:**  
+- **Frontend and API Communication:**  
+The frontend interacts with the API to upload and process PDF files. Ensure both are running simultaneously.
+- **Development:**  
  ....
 
 
-- **Modeller:**  
-   gmft : https://github.com/conjuncts/gmft  ve pandasai
-   maz model : https://arxiv.org/abs/2110.00061
+- **Models**  
+   gmft: https://github.com/conjuncts/gmft and
+  pandasai base model: https://arxiv.org/abs/2110.00061
 
 ---
 
-Herhangi bir sorun yaşarsanız, lütfen GitHub Issues üzerinden bildirin.
+If you encounter any issues, please report them via GitHub Issues.
 
 
