@@ -98,7 +98,7 @@ If you encounter an error in the browser like this:
   )
   ```
 
-## 📌 Ek Bilgiler
+## 📌 Add.
 
 - **Frontend and API Communication:**  
 The frontend interacts with the API to upload and process PDF files. Ensure both are running simultaneously.
