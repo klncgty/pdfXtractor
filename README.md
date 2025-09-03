@@ -1,5 +1,5 @@
 
-![0203](https://github.com/user-attachments/assets/82aab3ff-2154-4db7-aacf-f59762af0e9f)
+
 
 
 ### Complex Table Extraction from PDFs to CSV-JSON - AI Web Application
