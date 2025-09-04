@@ -33,11 +33,11 @@ importlib.reload(gmft.pdf_bindings)
 
 
 detector = AutoTableDetector()
-config_hdr = AutoFormatConfig() # config may be passed like so
+config_hdr = AutoFormatConfig(enable_multi_header=True) # config may be passed like so
 config_hdr.verbosity = 3
 config_hdr.enable_multi_header = True
 config_hdr.semantic_spanning_cells = True 
-formatter = AutoTableFormatter()
+formatter = AutoTableFormatter(config_hdr)
 
 
 
@@ -61,15 +61,6 @@ class PDFTableProcessor:
     def tablo_sayisi(self, input_path):
         tables, doc = self.ingest_pdf(input_path)
         return len(tables)
-    
-    
-    
-
-
-
-
-    
-
 
     def save_as_json(self,df, output_dir, table_index):
         """DataFrame'i JSON formatında kaydeder."""
@@ -138,4 +129,5 @@ if __name__ == "__main__":
     for table_file, image_file in table_processor:
         print(f"İşlenen dosya: {table_file}")
         print(f"Görsel dosyası: {image_file}")
+
         input("Sonraki tabloyu işlemek için Enter'a basın...")
