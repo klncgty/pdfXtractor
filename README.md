@@ -115,4 +115,11 @@ The frontend interacts with the API to upload and process PDF files. Ensure both
 
 If you encounter any issues, please report them via GitHub Issues.
 
+## License and Usage
+
+PDFXtractor is for **personal use only**. It **cannot** be used for commercial purposes, redistributed, or offered as a service to others.
+
+Licensed under the Creative Commons BY-NC 4.0 License.  
+More info: [https://creativecommons.org/licenses/by-nc/4.0/](https://creativecommons.org/licenses/by-nc/4.0/)
+
 
